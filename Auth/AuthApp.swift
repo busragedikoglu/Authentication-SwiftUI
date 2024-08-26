@@ -15,6 +15,7 @@ struct AuthApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(authModel)
+                .preferredColorScheme(.light)
         }
     }
 }

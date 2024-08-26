@@ -9,15 +9,13 @@ import Combine
 import SwiftUI
 
 class AuthModel: ObservableObject {
-    //ObservableObject: arayüz değişikliklerini otomatik olarak gözlemler
-    //@Published: veri akışı için kullanıldı(Combine)
     @Published var currentUser: User? = nil
     @Published var isAuthenticated: Bool = false
 
     private var users: [User] = []
 
     init() {
-        loadUsers() // İlk çalışır. Kaydedilmiş kullanıcıları belleğe yükler.
+        loadUsers()
     }
 
     func signUp(name: String, email: String, password: String) {
@@ -32,7 +30,6 @@ class AuthModel: ObservableObject {
         isAuthenticated = true
         currentUser = newUser
     }
-
 
     func signIn(email: String, password: String) -> Bool {
         if let user = users.first(where: { $0.email == email && $0.password == password }) {
@@ -64,7 +61,7 @@ class AuthModel: ObservableObject {
     }
 }
 
-struct User: Identifiable, Codable{
+struct User: Identifiable, Codable {
     var id = UUID()
     var name: String
     var email: String

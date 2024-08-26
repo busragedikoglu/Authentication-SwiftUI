@@ -49,8 +49,8 @@ struct ContentView: View {
             TextField("Email", text: $email)
                 .padding(14)
                 .keyboardType(.emailAddress)
-                .autocapitalization(.none) //Otomatik büyük harf olmasını engeller
-                .autocorrectionDisabled()//Otomatik düzenlemeyi kapatır
+                .autocapitalization(.none)
+                .autocorrectionDisabled()
         }
         .overlay {
             RoundedRectangle(cornerRadius: 10)
